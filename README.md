@@ -46,7 +46,7 @@ ExecStart=/usr/local/bin/node_exporter
 WantedBy=multi-user.target
 ```
 
-An alternate service file:
+An alternate service file (if you are using the other exporters):
 
 ```
 [Unit]
