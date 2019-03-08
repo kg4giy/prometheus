@@ -26,6 +26,26 @@ ExecStart=/usr/local/bin/prometheus \
 WantedBy=multi-user.target
 ```
 
+## Node Exporter
+
+Node Exporter service file (/etc/systemd/system/node_exporter.service)
+
+```
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## Alertmanager
 
 There are some serious issues with the mail system that I am still working through with information from the [Prometheus Git Hub](https://github.com/prometheus/alertmanager/issues/384)
