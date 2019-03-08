@@ -46,6 +46,26 @@ ExecStart=/usr/local/bin/node_exporter
 WantedBy=multi-user.target
 ```
 
+An alternate service file:
+
+```
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter --collectors.enabled meminfo,loadavg,filesystem
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
 ## Alertmanager
 
 There are some serious issues with the mail system that I am still working through with information from the [Prometheus Git Hub](https://github.com/prometheus/alertmanager/issues/384)
