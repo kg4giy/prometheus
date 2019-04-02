@@ -1,8 +1,7 @@
 global:
-  smtp_smarthost: 'smtp.1and1.com:587' 
+  smtp_smarthost: 'localhost:25' 
   smtp_from: 'kg4giy@vashire.com'
-  smtp_auth_username: 'kg4giy@vashire.com'
-  smtp_auth_password: 'Verb-Favor-1'
+  smtp_require_tls: false
 route:
   receiver: example-email
 receivers:
@@ -10,3 +9,4 @@ receivers:
    email_configs:
    - to: 'david.lane@vashire.com'
      send_resolved: true
+     require_tls: false
