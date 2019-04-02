@@ -1,0 +1,5 @@
+global:
+  smtp_smarthost: 'kg4giy.com:578'
+  smtp_from: 'prometheus@kg4giy.com'
+  smtp_auth_identity: 'pi@kg4giy.com'
+  smtp_auth_secret: 'Sunny!Days0'
